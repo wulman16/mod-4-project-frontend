@@ -1,25 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import Login from './components/Login.js'
-import Index from './components/Index.js'
-import Profile from './components/Profile.js'
 import * as serviceWorker from './serviceWorker';
 
-const Title = () => 
-  <h1>Clothing Game</h1>
-
-ReactDOM.render((
-  <Router>
-    <React.Fragment>
-      <Title />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/index" component={Index} />
-      <Route exact path="/profile" component={Profile} />
-    </React.Fragment>
-  </Router>),
+ReactDOM.render(( <App />),
   document.getElementById('root')
 );
 

@@ -1,3 +1,79 @@
+### Clothing Store App
+
+- An app where the user sets a budget and creates a cart of clothes, but with a twist: no prices are displayed until the end. If the user's cart comes under budget, they successfully check out. If it goes over budget, they lose!
+
+# User stories
+
+As a user, I can:
+  - Sign in with a name
+  - Browse available clothing items
+  - Filter and sort clothing items based on a variety of attributes
+  - Create a cart with a set budget
+  - Add clothing items to my cart
+  - Delete clothing items from my cart
+  - Check out
+  - See whether I came under my budget or not
+  - See my order history
+
+# Backend models
+
+User has_many Carts
+ClothingItem has_many Carts, through: CartClothingItem
+Cart has_many ClothingItems, through: CartClothingItem
+Cart belongs_to User
+
+
+User
+  - id
+  - name
+
+ClothingItem
+  - id
+  - name
+  - image
+  - description
+  - price
+  - category
+  - material
+  - color
+
+Cart
+  - id
+  - user_id
+  - budget
+  - active
+
+CartClothingItem
+  - cart_id
+  - clothing_item_id
+
+
+
+# Frontend Components
+
+  - App
+    - Login
+      - Title
+      - LoginContainer
+        - LoginForm
+      - SignupContainer
+        - SignupForm
+    - Index
+      - Title
+      - Settings
+      - BodyContainer
+        - Categories
+        - CardContainer
+          - Card
+        - Cart
+      - CheckoutDialog
+    - Profile
+      - Title
+      - CartHistory
+      
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

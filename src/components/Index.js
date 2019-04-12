@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import Settings from './Settings'
 
 class Index extends Component {
   render() {
     return (
       <div>
-        <h2>Index!</h2>
+        <Settings />
       </div>
     )
   }

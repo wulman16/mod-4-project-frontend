@@ -1,12 +1,26 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router'
 
 class Login extends Component {
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.handleLogin(e.target.name.value)
+  }
+
   render() {
-    return (
-      <div>
-        <h2>Login!</h2>
-      </div>
-    )
+    if (this.props.userId) {
+      return (<Redirect to="/index" />)
+    } else {
+      return (
+        <React.Fragment>
+          <form onSubmit={e => this.handleSubmit(e)}>
+            <input type="text" name="name"></input>
+            <input type="submit" value="Login"></input>
+          </form>
+        </React.Fragment>
+      )
+    }
   }
 }
 
