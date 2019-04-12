@@ -15,9 +15,9 @@ ReactDOM.render((
   <Router>
     <React.Fragment>
       <Title />
-      <Route exact path="/login" render={Login} />
-      <Route exact path="/index" render={Index} />
-      <Route exact path="/profile" render={Profile} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/index" component={Index} />
+      <Route exact path="/profile" component={Profile} />
     </React.Fragment>
   </Router>),
   document.getElementById('root')
