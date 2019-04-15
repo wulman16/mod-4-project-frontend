@@ -76,9 +76,14 @@ class BodyContainer extends Component {
   }
 
   handleFilter = (itemCategory) => {
+    if (itemCategory === `all`) {
+      this.setState({
+        filteredItems: this.state.clothingItems
+      })
+    } else {
     this.setState({
       filteredItems: this.state.clothingItems.filter(item => item.category === itemCategory)
-    })
+    })}
   }
 
   render() {

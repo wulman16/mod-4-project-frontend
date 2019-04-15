@@ -5,6 +5,7 @@ class Categories extends Component {
     return (
       <React.Fragment>
         <ul onClick={(e) => this.props.handleFilter(e.target.innerHTML.toLowerCase())}>
+          <li>All</li>
           <li>Shirts</li>
           <li>Pants</li>
           <li>Shorts</li>

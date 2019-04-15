@@ -87,7 +87,7 @@ class Index extends Component {
     } else if (data.budget === data.total) {
       alert(`You won! You met your budget exactly!`)
     } else {
-      alert(`You lose! You cam $${data.total - data.budget} over budget!`)
+      alert(`You lose! You came $${data.total - data.budget} over budget!`)
     }
   }
 
