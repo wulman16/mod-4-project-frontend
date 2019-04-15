@@ -19,7 +19,7 @@ class Index extends Component {
   }
 
   handleActiveCart = (carts) => {
-    if (carts.length > 0) {
+    if (carts.filter(cart => cart.active).length > 0) {
       this.setState({
         cartId: carts.find(cart => cart.active).id,
         budget: carts.find(cart => cart.active).budget})
