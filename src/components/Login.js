@@ -3,9 +3,14 @@ import { Redirect } from 'react-router'
 
 class Login extends Component {
 
-  handleSubmit = (e) => {
+  handleLoginSubmit = (e) => {
     e.preventDefault()
     this.props.handleLogin(e.target.name.value)
+  }
+
+  handleSignupSubmit = (e) => {
+    e.preventDefault()
+    this.props.handleSignup(e.target.name.value)
   }
 
   render() {
@@ -14,9 +19,15 @@ class Login extends Component {
     } else {
       return (
         <React.Fragment>
-          <form onSubmit={e => this.handleSubmit(e)}>
-            <input type="text" name="name"></input>
+          <label>Login</label>
+          <form onSubmit={e => this.handleLoginSubmit(e)}>
+            <input type="text" name="name" placeholder="Name"></input>
             <input type="submit" value="Login"></input>
+          </form>
+          <label>Signup</label>
+          <form onSubmit={e => this.handleSignupSubmit(e)}>
+            <input type="text" name="name" placeholder="Name"></input>
+            <input type="submit" value="Signup"></input>
           </form>
         </React.Fragment>
       )

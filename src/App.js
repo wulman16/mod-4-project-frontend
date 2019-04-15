@@ -33,21 +33,39 @@ class App extends Component {
   handleLogin = (name) => {
     fetch(`http://localhost:3000/users/${name}`)
       .then(response => response.json())
-      .then(data => this.setState({
+      .then(data => this.lookupLogin(data))
+  }
+
+  lookupLogin = (data) => {
+    if (data.length > 0) {
+      this.setState({
         user: {
           id: data[0].id,
           name: data[0].name
         }
-      }))
+      })} else {
+        alert(`Invalid login credentials!`)
+      }
   }
 
-  // handleProfileClick = () => {
-  //   this.setState({redirect: true})
-  // }
-
-  // do a fetch on our backend to see if there's a user who has that name
-  // if yes: set state to that user
-  // if no: tell them they have the wrong credentials
+  handleSignup = (userName) => {
+    fetch(`http://localhost:3000/users`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: userName
+      })
+    }).then(response => response.json())
+      .then(data => this.setState({
+        user: {
+          id: data.id,
+          name: data.name
+        }
+      }))
+  }
 
   render() {
     return (
@@ -58,7 +76,8 @@ class App extends Component {
           <Route exact path="/login"
                  render={(props) => (<Login {...props} userId={this.state.user.id}
                                                       userName={this.state.user.name}
-                                                      handleLogin={this.handleLogin} />)} />
+                                                      handleLogin={this.handleLogin}
+                                                      handleSignup={this.handleSignup} />)} />
           <Route exact path="/index" 
                  render={(props) => (<Index {...props} userId={this.state.user.id} 
                                                        userName={this.state.user.name} />)} />
