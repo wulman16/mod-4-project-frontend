@@ -10,19 +10,20 @@ class BodyContainer extends Component {
       id: null,
       items: []
     },
-    clothingItems: []
+    clothingItems: [],
+    filteredItems: []
   }
 
   componentDidMount() {
     fetch(`http://localhost:3000/clothing_items`)
       .then(response => response.json())
       .then(data => this.setState({
-        clothingItems: data
+        clothingItems: data,
+        filteredItems: data
       }))
   }
 
   componentWillReceiveProps(nextProps) {
-    // if(nextProps.cartId) {
     this.setState({
       cart: {
         ...this.state.cart,
@@ -46,7 +47,6 @@ class BodyContainer extends Component {
         }
       })
     }
-    // }
   }
 
   handleAdd = clothingItemId => {
@@ -75,11 +75,17 @@ class BodyContainer extends Component {
     })
   }
 
+  handleFilter = (itemCategory) => {
+    this.setState({
+      filteredItems: this.state.clothingItems.filter(item => item.category === itemCategory)
+    })
+  }
+
   render() {
     return (
       <React.Fragment>
-        <Categories />
-        <CardContainer clothingItems={this.state.clothingItems} handleAdd={this.handleAdd}/>
+        <Categories handleFilter={this.handleFilter} />
+        <CardContainer clothingItems={this.state.filteredItems} handleAdd={this.handleAdd}/>
         <Cart cartId={this.state.cart.id} cartItems={this.state.cart.items} budget={this.props.budget} handleCheckout={this.props.handleCheckout} />
       </React.Fragment>
     )
