@@ -4,9 +4,16 @@ import CartCard from './CartCard'
 class Cart extends Component {
   render() {
     return (
-      <div>
-        {this.props.cartItems.map(item => <CartCard item={item} />)}
-      </div>
+      <React.Fragment>
+        {this.props.cartItems 
+          ? this.props.cartItems.map(item => <CartCard item={item} />)
+          : null}
+        {this.props.cartItems && this.props.cartItems.length > 0
+          ? <button onClick={this.props.handleCheckout}>
+              Checkout
+            </button>
+          : null}
+      </React.Fragment>
     )
   }
 }

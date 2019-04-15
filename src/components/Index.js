@@ -62,12 +62,41 @@ class Index extends Component {
     }
   }
 
+  handleCheckout = () => {
+    fetch(`http://localhost:3000/carts/${this.state.cartId}`, {
+      method: 'PATCH',
+      headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      budget: this.state.budget,
+      active: false
+    })
+    }).then(response => response.json())
+      .then(data => this.renderResults(data))
+  }
+
+  renderResults = (data) => {
+    this.setState({
+      cartId: null,
+      budget: 0
+    })
+    if (data.budget > data.total) {
+      alert(`You won! You came $${data.budget - data.total} under budget!`)
+    } else if (data.budget === data.total) {
+      alert(`You won! You met your budget exactly!`)
+    } else {
+      alert(`You lose! You cam $${data.total - data.budget} over budget!`)
+    }
+  }
+
   render() {
       return (
         <div>
           {!this.props.userId ? <Redirect push to="/login" /> : null}
           <Settings userId={this.props.userId} cartId={this.state.cartId} toggleCart={this.toggleCart} budget={this.state.budget} handleBudget={this.handleBudget}/>
-          <BodyContainer cartId={this.state.cartId} budget={this.state.budget}/>
+          <BodyContainer cartId={this.state.cartId} budget={this.state.budget} handleCheckout={this.handleCheckout} />
         </div>
       )
     }
