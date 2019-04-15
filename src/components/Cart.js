@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import CartCard from './CartCard'
 
 class Cart extends Component {
   render() {
     return (
       <div>
-        Here's the cart!
+        {this.props.cartItems.map(item => <CartCard item={item} />)}
       </div>
     )
   }

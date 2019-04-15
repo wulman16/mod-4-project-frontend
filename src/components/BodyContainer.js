@@ -7,18 +7,34 @@ class BodyContainer extends Component {
 
   state = {
     cart: {
-      id: this.props.cartId,
+      id: null,
       items: []
     },
     clothingItems: []
   }
 
-  componentDidMount() {
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.cartId) {
+    this.setState({
+      cart: {
+        ...this.state.cart,
+        id: nextProps.cartId
+      }
+    })
     fetch(`http://localhost:3000/clothing_items`)
       .then(response => response.json())
       .then(data => this.setState({
         clothingItems: data
       }))
+    fetch(`http://localhost:3000/carts/${nextProps.cartId}`)
+      .then(response => response.json())
+      .then(data => this.setState({
+        cart: {
+          ...this.state.cart,
+          items: data.clothing_items
+        }
+      }))
+    }
   }
 
   handleAdd = clothingItemId => {
@@ -33,9 +49,19 @@ class BodyContainer extends Component {
         cart_id: parseInt(this.state.cart.id),
         clothing_item_id: parseInt(clothingItemId)
       })
-    }).then(response => response.json())
-      .then(data => console.log(data))
+    }).then(response => this.handleAddState(clothingItemId))
   }}
+
+  handleAddState = clothingItemId => {
+    const addedItem = this.state.clothingItems.find(item => item.id === clothingItemId)
+    const newItems = this.state.cart.items.concat(addedItem)
+    this.setState({
+      cart: {
+        ...this.state.cart,
+        items: newItems
+      }
+    })
+  }
 
   render() {
     return (

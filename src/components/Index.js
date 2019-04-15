@@ -7,10 +7,10 @@ class Index extends Component {
 
   state = {
     cartId: null,
-    budget: null
+    budget: 0
   }
 
-  componentDidMount() {
+  componentWillMount() {
     if (this.props.userId) {
     fetch(`http://localhost:3000/users/${this.props.userName}`)
       .then(response => response.json())
@@ -56,19 +56,9 @@ class Index extends Component {
 
   handleBudget = newBudget => {
     if (this.state.cartId) {
-      fetch(`http://localhost:3000/carts/${this.state.cartId}`, {
-        method: 'PATCH',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          id: this.state.cartId,
-          budget: newBudget
-        })
-      }).then(response => this.setState({
-          budget: newBudget
-        }))
+      this.setState({
+        budget: newBudget
+      })
     }
   }
 

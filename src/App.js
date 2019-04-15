@@ -14,7 +14,6 @@ class App extends Component {
       id: null,
       name: null
     },
-    redirect: false
   }
 
   getUser = (id) => {
