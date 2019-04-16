@@ -21,22 +21,28 @@ class Login extends Component {
       return (<Redirect to="/index" />)
     } else {
       return (
-        <div>
+        <div className="login-container">
+          <div className="login-form">
           <Form onSubmit={e => this.handleLoginSubmit(e)}>
             <Form.Group controlId="formBasicName">
               <Form.Label>Login</Form.Label>
               <Form.Control type="text" placeholder="Name" name="name" />
-              <Button variant="primary" type="submit">Submit</Button>
+              <br />
+              <Button variant="primary" type="submit">Login</Button>
             </Form.Group>
-          </Form>;
+          </Form>
+          </div>
 
+        <div className="signup-form">
           <Form onSubmit={e => this.handleSignupSubmit(e)}>
           <Form.Group controlId="formBasicSignUp">
             <Form.Label>Sign Up</Form.Label>
             <Form.Control type="text" placeholder="Name" name="name" />
-            <Button variant="primary" type="submit">Submit</Button>
+            <br />
+            <Button variant="primary" type="submit">Sign Up</Button>
           </Form.Group>
         </Form>
+        </div>
         </div>
       )
     }
