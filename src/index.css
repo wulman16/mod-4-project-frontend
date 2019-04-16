@@ -1,4 +1,4 @@
-/* body {
+body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -6,9 +6,40 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://previews.123rf.com/images/layritten/layritten1508/layritten150800013/43412570-seamless-pattern-of-colorful-clothes-for-stylish-design-transparent-pattern-background-of-clothing-s.jpg");
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* .Component-Bg {
+  backgroundImage: 'https://s3.envato.com/files/80ab989e-fb6e-4786-95d7-8201d2c93e38/inline_image_preview.jpg'; 
+  backgroundSize: 'cover';
+  backgroundPosition: 'center center';
+  backgroundRepeat: 'no-repeat';
 } */
+
+.title {
+  text-align: center;
+}
+
+.categories {
+  background-color: white;
+}
+
+.card-container {
+  background-color: white;
+}
+
+.flex-container {
+  display: flex;
+}
+
+
+

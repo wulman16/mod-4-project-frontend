@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Categories extends Component {
   render() {
     return (
-      <React.Fragment>
+      <div className="categories">
         <ul onClick={(e) => this.props.handleFilter(e.target.innerHTML.toLowerCase())}>
           <li>All</li>
           <li>Shirts</li>
@@ -18,7 +18,7 @@ class Categories extends Component {
           <li>Belts</li>
           <li>Hats</li>
         </ul>
-      </React.Fragment>
+      </div>
     )
   }
 }
