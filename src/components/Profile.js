@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Redirect } from 'react-router'
+import { Table } from 'react-bootstrap';
 
 
 class Profile extends Component {
@@ -23,7 +24,7 @@ class Profile extends Component {
       {!this.props.userId ? <Redirect push to="/login" /> : null}
       <NavLink to="/index"> Index </NavLink>
         <h2>Profile!</h2>
-          <table>
+          <Table striped bordered hover variant="dark">
             <thead>
               <tr>
                 <th>Cart History</th>
@@ -39,7 +40,7 @@ class Profile extends Component {
                 <td>{(cart.budget - cart.total) >= 0 ? "Won": "Lost"}</td>
               </tr>)}
             </tbody>
-          </table>
+          </Table>
       </div>
     )
   }

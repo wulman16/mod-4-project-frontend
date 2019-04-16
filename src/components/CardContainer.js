@@ -5,7 +5,7 @@ class CardContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="card-container">
         {this.props.clothingItems.map(ci => <Card clothingItem={ci} handleAdd={this.props.handleAdd} />)}
       </div>
     )

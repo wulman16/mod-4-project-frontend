@@ -4,8 +4,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './components/Login.js'
 import Index from './components/Index.js'
 import Profile from './components/Profile.js'
+import './index.css';
 
-const Title = () => <h1>Clothing Game</h1>
+const Title = () => <h1 className="title">Clothing Game</h1>
+// let imgURL = 'https://s3.envato.com/files/80ab989e-fb6e-4786-95d7-8201d2c93e38/inline_image_preview.jpg'
 
 class App extends Component {
 
@@ -67,6 +69,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <div className="Component-Bg">
         <React.Fragment>
           <Title />
           <Route exact path="/(login|)"
@@ -81,6 +84,7 @@ class App extends Component {
                  render={(props) => (<Profile {...props} userId={this.state.user.id}
                                                          userName={this.state.user.name} />)} />
         </React.Fragment>
+        </div>
       </Router>
     );
   }
