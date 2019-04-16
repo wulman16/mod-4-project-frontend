@@ -4,7 +4,8 @@ import CartCard from './CartCard'
 class Cart extends Component {
   render() {
     return (
-      <React.Fragment>
+      <div className="cart">
+        <h1>Cart</h1>
         {this.props.cartItems 
           ? this.props.cartItems.map(item => <CartCard item={item} />)
           : null}
@@ -13,7 +14,7 @@ class Cart extends Component {
               Checkout
             </button>
           : null}
-      </React.Fragment>
+      </div>
     )
   }
 }

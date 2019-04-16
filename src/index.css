@@ -6,7 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("https://previews.123rf.com/images/layritten/layritten1508/layritten150800013/43412570-seamless-pattern-of-colorful-clothes-for-stylish-design-transparent-pattern-background-of-clothing-s.jpg");
+  /* background-image: url("https://previews.123rf.com/images/layritten/layritten1508/layritten150800013/43412570-seamless-pattern-of-colorful-clothes-for-stylish-design-transparent-pattern-background-of-clothing-s.jpg"); */
+  background-image: url("https://previews.123rf.com/images/margolana/margolana1709/margolana170900048/86223191-vector-seamless-pattern-fashionable-mens-wear-background-for-use-in-design-fashion-man-cloth-and-acc.jpg");
   height: 100%; 
   background-position: center;
   background-repeat: no-repeat;
@@ -29,17 +30,64 @@ code {
   text-align: center;
 }
 
+.settings {
+  text-align: right;
+  padding: 20px;
+}
+
 .categories {
   background-color: white;
+  width: 300px;
+  border: 15px solid black;
+  padding: 50px;
+  margin: 20px;
+  text-align: center;
 }
 
 .card-container {
   background-color: white;
+  width: 800px;
+  border: 15px solid black;
+  padding: 50px;
+  margin: 20px;
+  text-align: center;
+}
+
+.cart {
+  background-color: white;
+  width: 300px;
+  border: 15px solid black;
+  padding: 50px;
+  margin: 20px;
+  text-align: center;
 }
 
 .flex-container {
   display: flex;
 }
+
+.login-container {
+  display: flex;
+  text-align: center;
+}
+
+.login-form {
+  background-color: white;
+  width: 500px;
+  border: 15px solid black;
+  padding: 80px;
+  margin: 100px 100px 100px 110px;
+}
+
+.signup-form {
+  background-color: white;
+  width: 500px;
+  border: 15px solid black;
+  padding: 80px;
+  margin: 100px;
+}
+
+
 
 
 

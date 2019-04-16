@@ -4,6 +4,7 @@ class Categories extends Component {
   render() {
     return (
       <div className="categories">
+      <h1>Products</h1>
         <ul onClick={(e) => this.props.handleFilter(e.target.innerHTML.toLowerCase())}>
           <li>All</li>
           <li>Shirts</li>

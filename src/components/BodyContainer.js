@@ -88,11 +88,11 @@ class BodyContainer extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className="flex-container">
         <Categories handleFilter={this.handleFilter} />
         <CardContainer clothingItems={this.state.filteredItems} handleAdd={this.handleAdd}/>
         <Cart cartId={this.state.cart.id} cartItems={this.state.cart.items} budget={this.props.budget} handleCheckout={this.props.handleCheckout} />
-      </React.Fragment>
+      </div>
     )
   }
 }
