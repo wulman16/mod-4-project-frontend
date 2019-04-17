@@ -19,13 +19,6 @@ code {
     monospace;
 }
 
-/* .Component-Bg {
-  backgroundImage: 'https://s3.envato.com/files/80ab989e-fb6e-4786-95d7-8201d2c93e38/inline_image_preview.jpg'; 
-  backgroundSize: 'cover';
-  backgroundPosition: 'center center';
-  backgroundRepeat: 'no-repeat';
-} */
-
 .title {
   text-align: center;
 }
@@ -51,6 +44,7 @@ code {
   padding: 50px;
   margin: 20px;
   text-align: center;
+  display: flex;
 }
 
 .cart {
@@ -85,6 +79,23 @@ code {
   border: 15px solid black;
   padding: 80px;
   margin: 100px;
+}
+
+.card {
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  margin: 5px;
+}
+
+.clothing-image {
+  margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.profile {
+  text-align: center;
 }
 
 

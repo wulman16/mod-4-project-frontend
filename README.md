@@ -66,6 +66,7 @@ CartClothingItem
         - CardContainer
           - Card
         - Cart
+          -CartCard
       - CheckoutDialog
     - Profile
       - Title
