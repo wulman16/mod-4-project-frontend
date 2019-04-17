@@ -14,7 +14,7 @@ class Settings extends Component {
         <input
           id="budget"
           type="range"
-          min="100" max="1000"
+          min="50" max="3000"
           value={this.props.budget}
           onChange={(e) => this.props.handleBudget(e.target.value)}
           step="50" />

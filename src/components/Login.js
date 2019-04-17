@@ -50,16 +50,3 @@ class Login extends Component {
 }
 
 export default Login
-
-
-
-/* <label>Login</label>
-          <form onSubmit={e => this.handleLoginSubmit(e)}>
-            <input type="text" name="name" placeholder="Name"></input>
-            <input type="submit" value="Login"></input>
-          </form>
-          <label>Signup</label>
-          <form onSubmit={e => this.handleSignupSubmit(e)}>
-            <input type="text" name="name" placeholder="Name"></input>
-            <input type="submit" value="Signup"></input>
-          </form> */
