@@ -20,10 +20,9 @@ class Profile extends Component {
 
   render() {
     return (
-      <div>
+      <div className="profile">
       {!this.props.userId ? <Redirect push to="/login" /> : null}
-      <NavLink to="/index"> Index </NavLink>
-        <h2>Profile!</h2>
+        <h2>Profile Page</h2>
           <Table striped bordered hover variant="dark">
             <thead>
               <tr>
@@ -41,6 +40,7 @@ class Profile extends Component {
               </tr>)}
             </tbody>
           </Table>
+          <NavLink to="/index"> Back to Shopping </NavLink>
       </div>
     )
   }

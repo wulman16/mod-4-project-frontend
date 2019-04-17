@@ -7,7 +7,6 @@ import Profile from './components/Profile.js'
 import './index.css';
 
 const Title = () => <h1 className="title">Clothing Game</h1>
-// let imgURL = 'https://s3.envato.com/files/80ab989e-fb6e-4786-95d7-8201d2c93e38/inline_image_preview.jpg'
 
 class App extends Component {
 

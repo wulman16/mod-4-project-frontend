@@ -4,8 +4,13 @@ class Card extends Component {
 
   render() {
     return (
-      <div onClick={() => this.props.handleAdd(this.props.clothingItem.id)}>
+      <div className='card'>
         {this.props.clothingItem.name}
+        <img src={this.props.clothingItem.image} alt="clothing" height='100px' width='100px' className="clothing-image" />
+        {this.props.clothingItem.description}
+        {this.props.clothingItem.material}
+        {this.props.clothingItem.color}
+        <button onClick={() => this.props.handleAdd(this.props.clothingItem.id)}>Add to Cart</button>
       </div>
     )
   }
