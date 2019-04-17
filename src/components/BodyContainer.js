@@ -88,7 +88,7 @@ class BodyContainer extends Component {
 
   render() {
     return (
-      <div className="flex-container">
+      <div className="flex-container justify-content-between">
         <Categories handleFilter={this.handleFilter} />
         <CardContainer clothingItems={this.state.filteredItems} handleAdd={this.handleAdd}/>
         <Cart cartId={this.state.cart.id} cartItems={this.state.cart.items} budget={this.props.budget} handleCheckout={this.props.handleCheckout} />

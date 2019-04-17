@@ -30,19 +30,20 @@ code {
 
 .categories {
   background-color: white;
-  width: 300px;
-  border: 15px solid black;
-  padding: 50px;
-  margin: 20px;
+  max-width: 300px;
+  max-height: 450px;
+  border: 10px solid black;
+  padding: 40px;
+  margin: 20px 0px 20px 20px;
   text-align: center;
 }
 
 .card-container {
   background-color: white;
-  width: 800px;
-  border: 15px solid black;
-  padding: 50px;
-  margin: 20px;
+  width: 600px;
+  border: 10px solid black;
+  padding: 40px;
+  margin: 20px 0px;
   text-align: center;
   display: flex;
 }
@@ -50,8 +51,8 @@ code {
 .cart {
   background-color: white;
   width: 300px;
-  border: 15px solid black;
-  padding: 50px;
+  border: 10px solid black;
+  padding: 40px;
   margin: 20px;
   text-align: center;
 }
@@ -82,10 +83,11 @@ code {
 }
 
 .card {
-  height: 200px;
-  width: 200px;
+  height: 225px;
+  width: 50%;
   text-align: center;
   margin: 5px;
+  overflow: scroll;
 }
 
 .clothing-image {
